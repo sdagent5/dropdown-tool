@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copyable Dropdown</title>
+    <!-- Include Select2 CSS for the searchable dropdown -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        select {
+            width: 300px;
+            max-width: 100%;
+            padding: 5px;
+            font-size: 16px;
+        }
+        #copy-message {
+            color: green;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select and Copy Product</h1>
+    <label for="dropdown">Choose a product:</label>
+    <select id="dropdown">
+        <option value="" disabled selected>Select a product</option>
+        <option value="affirm-creme-relaxer">Affirm Crème Relaxer</option>
+        <option value="affirm-dry-itchy-scalp-relaxer">Affirm Dry & Itchy Scalp Relaxer</option>
+        <option value="affirm-fiberguard-conditioning-creme-relaxer">Affirm FiberGuard Conditioning Crème Relaxer</option>
+        <option value="affirm-fiberguard-sensitive-scalp-conditioning-relaxer">Affirm FiberGuard Sensitive Scalp Conditioning Relaxer</option>
+        <option value="affirm-sensitive-scalp-relaxer">Affirm Sensitive Scalp Relaxer</option>
+        <option value="africas-best-herbal-intensive-no-lye-relaxer-system">Africa's Best Herbal Intensive No-Lye Relaxer System</option>
+        <option value="african-pride-dream-kids-no-lye-relaxer-kit">African Pride - Dream Kids No Lye Relaxer Kit</option>
+        <option value="african-pride-multi-length-texturizer-kit">African Pride - Multi Length Texturizer Kit</option>
+        <option value="african-pride-no-base-relaxer">African Pride - No Base Relaxer</option>
+        <option value="african-pride-no-lye-relaxer-kit">African Pride - No Lye Relaxer Kit</option>
+        <option value="african-pride-dream-kids-miracle-touch-up-relaxer-kit">African Pride Dream Kids Miracle (4) Touch-Up Relaxer Kit</option>
+        <option value="african-pride-dream-kids-olive-miracle-relaxer">African Pride Dream Kids Olive Miracle Relaxer</option>
+        <option value="african-pride-dream-kids-olive-miracle-touch-up-relaxer-kit">African Pride Dream Kids Olive Miracle Touch-Up Relaxer Kit</option>
+        <option value="african-pride-olive-miracle-deep-conditioning-no-lye-relaxer">African Pride Olive Miracle Deep Conditioning No-Lye Relaxer One Complete Application</option>
+        <option value="african-pride-shea-miracle-texture-softening-elongating-system">African Pride Shea Miracle Texture Softening Elongating System</option>
+        <option value="all-ways-natural-no-lye-conditioning-creme-relaxer-kit">All Ways Natural - No Lye Conditioning Crème Relaxer Kit</option>
+        <option value="arosci-aromaphoric-relaxer-system">Arosci Aromaphoric Relaxer System</option>
+        <option value="banti-no-base-relaxer">Banti No Base Relaxer</option>
+        <option value="care-free-curl-cold-wave-chemical-rearranger-super-strength">Care Free Curl - Cold Wave Chemical Rearranger Super Strength</option>
+        <option value="creme-of-nature-cni-no-lye-relaxer">Crème Of Nature Cni No Lye Relaxer</option>
+        <option value="creme-of-nature-cni-sunflower-coconut-oil-creme">Crème Of Nature Cni Sunflower & Coconut Oil - Crème</option>
+        <option value="creme-of-nature-eden-relaxer">Crème Of Nature Eden Relaxer</option>
+        <option value="creme-of-nature-herbarich-conditioning-creme-relaxer-texturizing-system">Crème of Nature Herbarich Conditioning Crème Relaxer and Texturizing System</option>
+        <option value="creme-of-nature-herbarich-conditioning-creme-relaxer-system-kit">Crème of Nature Herbarich Conditioning Crème Relaxer System Kit</option>
+        <option value="creme-of-nature-herbarich-no-base-relaxer">Crème of Nature Herbarich No Base Relaxer</option>
+        <option value="creme-of-nature-no-base-relaxer">Crème of Nature No Base Relaxer</option>
+        <option value="creme-of-nature-no-lye-relaxer">Crème of Nature No Lye Relaxer</option>
+        <option value="creme-of-nature-relaxer-cream">Crème Of Nature Relaxer Cream</option>
+        <option value="creme-of-nature-relaxer-kit-argan-oil">Crème Of Nature Relaxer Kit Argan Oil</option>
+        <option value="creme-of-nature-sodium-relaxer-kit">Crème of Nature Sodium Relaxer Kit</option>
+        <option value="dark-lovely-beautiful-beginnings-no-mistake-curl-softener">Dark and Lovely Beautiful Beginnings No Mistake Curl Softener</option>
+        <option value="dark-lovely-beautiful-beginnings-no-mistake-smooth-relaxer">Dark and Lovely Beautiful Beginnings No Mistake Smooth Relaxer</option>
+        <option value="dark-lovely-healthy-gloss-5-shea-moisture-no-lye-relaxer">Dark and Lovely Healthy Gloss 5 Shea Moisture No Lye Relaxer</option>
+        <option value="dark-lovely-triple-nourished-silkening-relaxer">Dark and Lovely Triple Nourished Silkening Relaxer</option>
+        <option value="design-essentials-honey-nectar-relaxer-kit-time-release-regular-strength">Design Essentials Honey Nectar Relaxer Kit - Time Release Regular Strength</option>
+        <option value="design-essentials-regular-conditioning-relaxer">Design Essentials Regular Conditioning Relaxer</option>
+        <option value="design-essentials-sensitive-scalp-relaxer-system">Design Essentials Sensitive Scalp Relaxer System</option>
+        <option value="dr-miracles-new-growth-no-lye-relaxer-kit">Dr. Miracle's New Growth No-Lye Relaxer Kit</option>
+        <option value="dr-miracles-no-lye-relaxer-kit">Dr. Miracle's No Lye Relaxer Kit</option>
+        <option value="elasta-qp-extra-body-no-base-regular-relaxer">Elasta QP Extra Body No-Base Regular Relaxer</option>
+        <option value="elasta-qp-extra-body-no-base-super-relaxer">Elasta QP Extra Body No-Base Super Relaxer</option>
+        <option value="elasta-qp-no-base-creme-relaxer">Elasta QP No Base Crème Relaxer</option>
+        <option value="elasta-qp-no-base-relaxer">Elasta QP No-Base Relaxer</option>
+        <option value="elasta-qp-normal-relaxer-kit">Elasta QP Normal Relaxer Kit</option>
+        <option value="elasta-qp-normal-relaxer-kit-2-applications">Elasta QP Normal Relaxer Kit 2 Applications</option>
+        <option value="elasta-qp-resistant-relaxer-kit">Elasta QP Resistant Relaxer Kit</option>
+        <option value="elasta-qp-sensitive-scalp-kit-4-applications">Elasta QP Sensitive Scalp Kit - 4 Applications</option>
+        <option value="elasta-qp-sensitive-scalp-kit-12-application-economy-pack">Elasta QP Sensitive Scalp Kit 12 Application Economy Pack</option>
+        <option value="elasta-qp-soy-oyl-4-application-anti-dryness-no-lye-relaxer-kit">Elasta QP SOY OYL 4 Application Anti-Dryness No Lye Relaxer Kit</option>
+        <option value="elasta-qp-soy-oyl-no-base-relaxer">Elasta QP SOY OYL No-Base Relaxer</option>
+        <option value="fabulaxer-gro-7">Fabulaxer Gro-7</option>
+        <option value="fabulaxer-no-lye-relaxer">Fabulaxer No-Lye Relaxer</option>
+        <option value="gentle-treatment-no-lye-relaxer">Gentle Treatment No-Lye Relaxer</option>
+        <option value="gentle-treatment-no-lye-relaxer-gray-kit">Gentle Treatment No-Lye Relaxer Gray Kit</option>
+        <option value="hawaiian-silky-creme-conditioning-no-lye-silky-smooth-sheen-relaxer">Hawaiian Silky - Crème Conditioning No Lye Silky Smooth Sheen Relaxer</option>
+        <option value="hawaiian-silky-herbal-no-lye-conditioning-relaxer-system-with-teatree-avocado-oil-2-applications">Hawaiian Silky - Herbal No Lye Conditioning Relaxer System with TeaTree & Avocado Oil - 2 Applications</option>
+        <option value="just-for-me-4-application-salon-pack-relaxer">Just For Me 4 Application Salon Pack Relaxer</option>
+        <option value="just-for-me-no-lye-conditioning-creme-relaxer-kit">Just For Me No-Lye Conditioning Crème Relaxer Kit</option>
+        <option value="just-for-me-no-lye-conditioning-creme-relaxer-kit-super-with-oil-moisturize-lotion">Just For Me No-Lye Conditioning Crème Relaxer Kit (Super) with Oil Moisturize Lotion</option>
+        <option value="just-for-me-no-lye-conditioning-creme-relaxer-kit-with-coil-curl-cream">Just For Me No-Lye Conditioning Crème Relaxer Kit with Coil & Curl Cream</option>
+        <option value="just-for-me-no-lye-texture-softener-system">Just For Me No-Lye Texture Softener System</option>
+        <option value="just-for-me-no-lye-texture-softener-system-with-hair-scalp-butter">Just For Me No-Lye Texture Softener System with Hair & Scalp Butter</option>
+        <option value="just-for-me-relaxer-1-complete-touch-up-relaxer">Just For Me Relaxer 1 Complete Touch Up Relaxer</option>
+        <option value="look-of-radiance-permanent-creme-relaxer-kit">Look of Radiance Permanent Crème Relaxer Kit</option>
+        <option value="lusters-pink-oil-moisturizer-no-lye-conditioning-relaxer">Luster's Pink Oil Moisturizer No-Lye Conditioning Relaxer</option>
+        <option value="lusters-pink-oil-moisturizer-short-looks-texturize">Luster's Pink Oil Moisturizer Short Looks Texturize</option>
+        <option value="lusters-pink-oil-moisturizer-smooth-touch-relaxer">Luster's Pink Oil Moisturizer Smooth Touch Relaxer</option>
+        <option value="mizani-butter-blend-relaxer">Mizani Butter Blend Relaxer</option>
+        <option value="mizani-butter-blend-sensitive-scalp-rhelaxer">Mizani Butter Blend Sensitive Scalp Rhelaxer</option>
+        <option value="mizani-butterblend-prosolvent-relaxer">Mizani Butterblend Prosolvent Relaxer</option>
+        <option value="mizani-classic-rhelaxer">Mizani Classic Rhelaxer</option>
+        <option value="mizani-sensitive-scalp-rhelaxer">Mizani Sensitive Scalp Rhelaxer</option>
+        <option value="motions-classic-formula-smooth-silken-hair-relaxer">Motions Classic Formula Smooth & Silken Hair Relaxer</option>
+        <option value="motions-professional-12-application-salon-pack">Motions Professional 12- Application Salon Pack</option>
+        <option value="motions-silkening-shine-no-lye-relaxer-kit">Motions Silkening Shine No Lye Relaxer Kit</option>
+        <option value="namaste-salon-system-conditioning-sensitive-scalp-no-lye-relaxer">Namasté Salon System Conditioning Sensitive Scalp No-Lye Relaxer</option>
+        <option value="namaste-salon-system-creme-relaxer">Namasté Salon System Crème Relaxer</option>
+        <option value="namaste-salon-system-creme-relaxer-trial-pack">Namasté Salon System Crème Relaxer Trial Pack</option>
+        <option value="namaste-salon-system-triple-emulsion-relaxer">Namasté Salon System Triple Emulsion Relaxer</option>
+        <option value="optimum-care-bodifying-relaxer">Optimum Care Bodifying Relaxer</option>
+        <option value="optimum-multi-mineral-reduced-ph-creme-relaxer">Optimum Multi-Mineral Reduced pH Crème Relaxer</option>
+        <option value="optimum-salon-haircare-amla-legend-relaxer">Optimum Salon Haircare Amla Legend Relaxer</option>
+        <option value="optimum-salon-haircare-defy-breakage-no-lye-relaxer">Optimum Salon Haircare Defy Breakage No-Lye Relaxer</option>
+        <option value="organics-by-africas-best-kids-natural-conditioning-relaxer-system">Organics by Africa's Best Kids Natural Conditioning Relaxer System</option>
+        <option value="organics-by-africas-best-kids-organic-conditioning-relaxer-system">Organics by Africa's Best Kids Organic Conditioning Relaxer System</option>
+        <option value="organics-by-africas-best-olive-oil-conditioning-relaxer-system-with-extra-virgin-olive-oil">Organics by Africa's Best Olive Oil Conditioning Relaxer System with Extra Virgin Olive Oil</option>
+        <option value="originals-by-africas-best-kids-originals-natural-conditioning-relaxer-system">Originals by Africa's Best Kids Originals Natural Conditioning Relaxer System</option>
+        <option value="originals-by-africas-best-originals-olive-oil-conditioning-relaxer">Originals by Africa's Best Originals Olive Oil Conditioning Relaxer</option>
+        <option value="ors-hairepair-no-lye-conditioning-relaxer-system-with-cuticle-shield">ORS HAIRepair No-Lye Conditioning Relaxer System with Cuticle Shield</option>
+        <option value="ors-olive-oil-built-in-protection-no-lye-relaxer-full-application">ORS Olive Oil Built-In-Protection No-Lye Relaxer - Full Application</option>
+        <option value="ors-olive-oil-built-in-protection-no-lye-relaxer-new-growth">ORS Olive Oil Built-In-Protection No-Lye Relaxer - New Growth</option>
+        <option value="ors-olive-oil-creme-on-creme-touch-up-no-lye-hair-relaxer">ORS Olive Oil Crème on Crème Touch-Up No-Lye Hair Relaxer</option>
+        <option value="ors-olive-oil-curl-stretching-texturizer">ORS Olive Oil Curl Stretching Texturizer</option>
+        <option value="ors-olive-oil-girls-built-in-protection-plus-no-lye-conditioning-hair-relaxer-system">ORS Olive Oil Girls Built-In Protection Plus No-Lye Conditioning Hair Relaxer System</option>
+        <option value="ors-olive-oil-girls-soft-curls-no-lye-creme-texture-softening-system">ORS Olive Oil Girls Soft Curls No-Lye Crème Texture Softening System</option>
+        <option value="ors-olive-oil-mild-touch-relaxer-with-60-percent-lower-chemical">ORS Olive Oil Mild Touch Relaxer with 60% Lower Chemical</option>
+        <option value="ors-olive-oil-no-mix-salon-formula-creme-relaxer">ORS Olive Oil No-Mix Salon Formula Crème Relaxer</option>
+        <option value="ors-olive-oil-professional-creme-relaxer">ORS Olive Oil Professional Crème Relaxer</option>
+        <option value="ors-olive-oil-professional-no-lye-relaxer-kit">ORS Olive Oil Professional No-Lye Relaxer Kit</option>
+        <option value="ors-olive-oil-texlax-and-stretch-semi-straightening-system">ORS Olive Oil Texlax and Stretch Semi-Straightening System</option>
+        <option value="ors-olive-oil-ultra-nourish-creme-hair-relaxer">ORS Olive Oil Ultra Nourish Crème Hair Relaxer</option>
+        <option value="ors-olive-oil-zone-relaxer-targeted-touch-up-no-lye-hair-relaxer">ORS Olive Oil Zone Relaxer – Targeted Touch-Up No-Lye Hair Relaxer</option>
+        <option value="other">Other</option>
+        <option value="pcj-kit">PCJ Kit</option>
+        <option value="pcj-no-lye-kit-adult">PCJ No Lye Kit - Adult</option>
+        <option value="pcj-no-lye-kit-childrens">PCJ No Lye Kit - Children’s</option>
+        <option value="profectiv-megagrowth-anti-damage-no-lye-relaxer-1-complete-touch-up-application">Profectiv MegaGrowth Anti-Damage No-Lye Relaxer 1 Complete Touch Up Application</option>
+        <option value="profectiv-megagrowth-anti-damage-no-lye-relaxer-2-touch-up-application">Profectiv MegaGrowth Anti-Damage No-Lye Relaxer 2 Touch Up Application</option>
+        <option value="profectiv-procision-relaxer-kit-regular">Profectiv Procision Relaxer Kit Regular</option>
+        <option value="profectiv-relax-refresh-kit-auburn-spice">Profectiv Relax and Refresh Kit Auburn Spice</option>
+        <option value="profectiv-relax-refresh-kit-cherry-fusion">Profectiv Relax and Refresh Kit Cherry Fusion</option>
+        <option value="profectiv-relax-refresh-kit-jet-black">Profectiv Relax and Refresh Kit Jet Black</option>
+        <option value="profectiv-relax-refresh-kit-mahogany-brown">Profectiv Relax and Refresh Kit Mahogany Brown</option>
+        <option value="profectiv-relax-refresh-kit-silky-black">Profectiv Relax and Refresh Kit Silky Black</option>
+        <option value="pro-line-comb-thru-texturizer-kit">Pro-Line Comb Thru Texturizer Kit</option>
+        <option value="revlon-realistic-no-lye-relaxer-kit">Revlon Realistic No Lye Relaxer Kit</option>
+        <option value="revlon-realistic-no-base-relaxer">Revlon Realistic No-Base Relaxer</option>
+        <option value="sb-botanicals-2-application-relaxer">S&B® Botanicals™ 2 Application Relaxer</option>
+        <option value="sb-botanicals-no-lye-sensitive-scalp-relaxer-1-app">S&B® Botanicals™ No-Lye Sensitive Scalp Relaxer, 1-App</option>
+        <option value="sb-botanicals-no-mix-texturizer-2-app">S&B® Botanicals™ No-Mix Texturizer 2-App</option>
+        <option value="sb-botanicals-no-mix-texturizer-2-app-deep-conditioner">S&B® Botanicals™ No-Mix Texturizer 2-App, with Deep Conditioner</option>
+        <option value="sb-botanicals-relaxer-8-touch-up">S&B® Botanicals™ Relaxer 8-Touch Up</option>
+        <option value="shortlooks-colorlaxer-diamond-black">ShortLooks Colorlaxer Diamond Black</option>
+        <option value="shortlooks-colorlaxer-passion-red">ShortLooks Colorlaxer Passion Red</option>
+        <option value="shortlooks-colorlaxer-sable-brown">ShortLooks Colorlaxer Sable Brown</option>
+        <option value="smart-perm-smart-valu-smart-gro-stimulator-new-growth-no-lye-relaxer-with-grorehab-4-applications">Smart Perm Smart Valu Smart Gro Stimulator New Growth No-Lye Relaxer with GroRehab 4 Applications</option>
+        <option value="smartperm-no-lye-anti-breakage-relaxer-system">SmartPerm No-Lye Anti-Breakage Relaxer System</option>
+        <option value="smartperm-no-lye-anti-breakage-new-growth-relaxer-system-smart-grow-stimulator">SmartPerm No-Lye Anti-Breakage New Growth Relaxer System, Smart Grow Stimulator</option>
+        <option value="smartperm-smart-valu-no-lye-anti-breakage-relaxer-kit-4-applications">SmartPerm Smart Valu No-Lye Anti-Breakage Relaxer Kit, 4 Applications</option>
+        <option value="soft-beautiful-no-lye-creme-relaxer">Soft & Beautiful No-Lye Crème Relaxer</option>
+        <option value="soft-beautiful-no-lye-ultimate-conditioning-relaxer-system">Soft & Beautiful No-Lye Ultimate Conditioning Relaxer System</option>
+        <option value="tcb-naturals-conditioning-argan-oil-vitamin-e-olive-no-lye-relaxer">TCB Naturals Conditioning Argan Oil Vitamin E & Olive No-Lye Relaxer</option>
+        <option value="tcb-naturals-conditioning-argan-oil-vitamin-e-olive-no-lye-relaxer-2-applications">TCB Naturals Conditioning Argan Oil Vitamin E & Olive No-Lye Relaxer, 2 Applications</option>
+        <option value="tcb-no-base-creme-hair-relaxer-with-protein-dna">TCB No-Base Crème Hair Relaxer with Protein & DNA</option>
+        <option value="texture-my-way-mens-texturizing-kit">Texture My Way Men’s Texturizing Kit</option>
+        <option value="texture-my-way-womens-texturizing-softening-system">Texture My Way Women’s Texturizing & Softening System</option>
+        <option value="ultra-precise-no-lye-conditioning-relaxer">Ultra Precise No-Lye Conditioning Relaxer</option>
+        <option value="ultrasheen-supreme-conditioning-no-lye-relaxer">UltraSheen Supreme Conditioning No-Lye Relaxer</option>
+        <option value="ultrasheen-ultra-moisturizing-no-lye-relaxer">UltraSheen Ultra Moisturizing No-Lye Relaxer</option>
+        <option value="ultrasheen-ultra-moisturizing-no-lye-relaxer-with-keratin">UltraSheen Ultra Moisturizing No-Lye Relaxer, with Keratin</option>
+        <option value="vitale-life-body-hair-relaxer-with-aloe-vera-smooth-silky-texture">Vitale - Life and Body - Hair Relaxer with Aloe Vera - Smooth Silky Texture</option>
+        <option value="vitale-olive-oil-anti-breakage-relaxer-no-base-with-shea-butter-regular-strength">Vitale - Olive Oil Anti-Breakage Relaxer No Base with Shea Butter - Regular Strength</option>
+        <option value="vitale-mo-body-shea-butter-sensitive-scalp-relaxer-with-oatmeal-protein">Vitale Mo'Body - Shea Butter Sensitive Scalp Relaxer with Oatmeal Protein</option>
+        <option value="vitale-pro-new-texture-salon-exclusive-hair-relaxer">Vitale Pro - New Texture Salon Exclusive Hair Relaxer</option>
+    </select>
+
+    <p id="copy-message" style="color: green; display: none;">Copied to clipboard!</p>
+
+    <!-- Include jQuery (required for Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        // Initialize Select2 for the dropdown
+        $(document).ready(function() {
+            $('#dropdown').select2({
+                placeholder: 'Select a product',
+                allowClear: true
+            });
+
+            // Event listener for when a selection is made
+            $('#dropdown').on('select2:select', function(e) {
+                const selectedText = e.params.data.text;
+                
+                // Copy the selected option text to clipboard
+                navigator.clipboard.writeText(selectedText).then(() => {
+                    // Show a message or indication that it has been copied
+                    const message = document.getElementById('copy-message');
+                    message.textContent = `"${selectedText}" copied to clipboard!`;
+                    message.style.display = 'block';
+                    setTimeout(() => {
+                        message.style.display = 'none';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
